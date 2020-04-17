@@ -1,0 +1,24 @@
+<%= render 'top/navbar' %>
+<div class="followers_contents">
+  <h3><%= @user.nickname %>さんのフォロワー</h3>
+  <div class="followers container">
+    <% @followers.each do |follower| %>
+      <div class="follower row">
+        <div class="image col-lg-2 col-xs-12">
+          <% if follower.image.attached? %>
+          <%= image_tag follower.image.variant(resize: "100x100") %>
+          <% else %>
+          <p>画像<br>無し</p>
+          <% end %>
+        </div>
+        <div class="follower_name col-lg-10 col-xs-12">
+          <p><%= link_to "#{follower.nickname}", user_path(follower) %></p>
+          <p>
+            <%= link_to "フォロー: #{follower.followings.count}", "/relationships/#{follower.id}/following" %> , 
+            <%= link_to "フォロワー: #{follower.followers.count}", "/relationships/#{follower.id}/follower" %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

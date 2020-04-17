@@ -1,0 +1,13 @@
+<% @comments.each do |comment| %>
+      
+  <div class="comment col-sm-12">
+    <p><%= link_to "#{comment.user.nickname}", user_path(comment.user) %> : <%= comment.text %></p>
+    <p>
+      <%= time_ago_in_words comment.updated_at %>
+      <% if @recruit_player.user.id==current_user.id %>
+      <%= link_to "コメント削除", "/recruit_players/#{@recruit_player.id}/players_comments/#{comment.id}", method: :delete %>
+      <% end %>
+    </p>
+  </div>
+  <div class="clear"></div>
+<% end %>

@@ -1,0 +1,18 @@
+<%= render 'top/navbar' %>
+
+<div class="clear"></div>
+
+<div class="video_contents">
+  <div class="video_title">
+    <h3><%= @user.nickname %>さんのテニス風景</h3>
+  </div>
+  <div id: "user_video">
+    <% if @user.video.present? %>
+    <%= video_tag("#{@user.video}", autoplay: true, loop: true, muted: true, style: "width:200px;", id: "video") %>
+    <% else %>
+    <p><%= @user.nickname %>さんは動画をアップロードしていません。</p>
+    <% end %>
+  </div>
+  <div class="back_to_user"></div>
+  <%= link_to "ユーザーページに戻る", user_path(@user) %>
+</div>

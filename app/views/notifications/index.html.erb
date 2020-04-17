@@ -1,0 +1,16 @@
+<%= render 'top/navbar' %>
+
+<% notifications = @notifications.where.not(visitor_id: current_user.id) %>
+
+<div class="notifications">
+  <div class="notification">
+    <h3><%= current_user.nickname %> さんへの新規通知一覧</h3>
+  </div>
+  <% if notifications.exists? %>
+    <%= render notifications %>
+  <% else %>
+  <div class="notification">
+    <p>新規通知はありません</p>
+  </div>
+  <% end %>
+</div>

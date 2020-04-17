@@ -1,0 +1,47 @@
+<%= render 'top/navbar' %>
+
+<div class="user_page container">
+  <h2　class="user_page_title"><span><%= @user.nickname %></span>さんのページ</h2>
+  <div class="user_introduction row">
+    <h3 class="col-sm-12">自己紹介</h3>
+    <div class="image col-sm-12">
+      <% if @user.image.attached? %>
+      <%= image_tag @user.image.variant(resize: "100x100") %>
+      <% else %>
+      <p>画像<br>無し</p>
+      <% end %>
+      <div class="clear"></div>
+      <div>
+        <%= link_to "#{@user.nickname}さんのテニス風景を見る", "/users/#{@user.id}/video" %>
+      </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="col-sm-12" id="follow_button">
+      <%= render "relationships/follow_button", user: @user %>
+    </div>
+    <div class="col-sm-12" id="follow_links">
+      <%= link_to "フォロー: #{@user.followings.count}  ", "/relationships/#{@user.id}/following" %> , 
+      <%= link_to "フォロワー: #{@user.followers.count}  ", "/relationships/#{@user.id}/follower" %>
+    </div>
+    
+    <div class="user_introduction">
+      <p><%= @user.introduction %></p>
+    </div>
+  </div>
+  <% if @user.id == current_user.id %>
+  <p><%= link_to "プロフィールを編集する", edit_user_path(current_user) %></p>
+  <% end %>
+  <p><%= link_to "トップページに戻る", root_path %></p>
+</div>
+
+<div class="recruit_page">
+  <h2>募集内容一覧</h2>
+  <% if @recruit_players.present? %>
+  <%= render @recruit_players %>
+  <% else %>
+  <p><%= @user.nickname %> さんは現在、仲間を募集しておりません。</p>
+  <% end %>
+  <%= paginate(@recruit_players) %>
+</div>

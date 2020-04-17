@@ -1,0 +1,66 @@
+<%= render 'top/navbar' %>
+
+<div class="recruit_player_content">
+  <div class="user_image"><%= image_tag @recruit_player.user.image.variant(resize: "100x100") %></div>
+  <h3>募集主： <%= link_to "#{@recruit_player.user.nickname}", user_path(@recruit_player.user) %></h3>
+  <div class="clear"></div>
+  <div class="timeplace">
+  <p class="tennistime">希望時間: <%= @recruit_player.start_time.strftime("%Y-%m-%d %H:%M") %>～<%= @recruit_player.finish_time.strftime("%Y-%m-%d %H:%M") %></p>
+    <p>希望場所: <%= @recruit_player.place %></p>
+    <div class="detail_content">
+      <p><%= @recruit_player.text %></p>
+    </div>
+    
+  </div>
+  <%= form_for(@comment, url: recruit_player_players_comments_path) do |f| %>
+    <div class="form_group">
+      <%= f.label "コメント" %>
+      <%= f.text_area :text, placeholder: "ここにコメントをご記入下さい" %>
+    </div>
+    
+    <div class="form_group">
+      <%= f.hidden_field :user_id %>
+    </div>
+    
+    <div class="form_group">
+      <%= f.hidden_field :recruit_player_id %>
+    </div>
+    <%= f.submit "コメントを投稿する" %>
+  <% end %>
+  <div class="clear"></div>
+  <div class="like"　id="like">
+    <% if current_user.already_liked?(@recruit_player) %>
+      <%= button_to 'いいねを取り消す', "/recruit_players/#{@recruit_player.id}/likes/#{current_user.id}", method: :delete, remote: true %>
+    <% else %>
+      <%= button_to 'いいね', recruit_player_likes_path(@recruit_player), method: :post, remote: true %>
+    <% end %>
+    <div class="good_count">
+      <%= link_to "#{@recruit_player.likes.count}件のいいね", "/recruit_players/#{@recruit_player.id}/likedmember" %>
+    </div>
+  </div>
+</div>
+
+<div class="sub_content">
+  <div>
+  <% if @recruit_player.user_id == current_user.id %>
+  <div class="destroy_recruit_page">
+    <p><%= link_to "この記事を削除する", "/recruit_players/#{@recruit_player.id}", method: :delete %></p>
+    <p><%= link_to "この記事を編集する", "/recruit_players/#{@recruit_player.id}/edit" %></p>
+  </div>
+  <% end %>
+  <p>
+    <%= link_to "トップに戻る", root_path %>
+  </p>
+  </div>
+  <div class="comment_contents container">
+    <h3>コメント一覧</h3>
+    <div>
+      ※コメントは、募集主及び自身のコメントしか表示されないようになっています。
+      <br>ただし、自身の募集要項については、全てのコメントが表示されます。
+      <br>コメントを送る際は、送りたい相手の名前を忘れずに書くようにして下さい。
+    </div>
+    <div class="contents row">
+      <%= render partial: "players_comments/comment" %>
+    </div>
+  </div>
+</div>

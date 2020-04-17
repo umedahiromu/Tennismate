@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: lightgreen" >
+  <%= link_to "Tennisser!", root_path, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/check">テニス前に要チェック！</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          仲間を募集する
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "練習相手を募集する", new_recruit_player_path, class: "dropdown-item" %>
+          <a class="dropdown-item" href="#">テニスコーチを募集する</a>
+        </div>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          マイページ
+        </a>
+        <% if current_user.passive_notifications.exists?(checked: false) %>
+        <% newstitle="通知（新規あり）" %>
+        <% else %>
+        <% newstitle="通知" %>
+        <% end %>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <% if user_signed_in? %><%= link_to "マイページ", user_path(current_user), class: "dropdown-item" %><% end %>
+          <%= link_to newstitle, notifications_path, method: :get, class: "dropdown-item" %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

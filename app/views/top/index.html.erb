@@ -1,0 +1,23 @@
+<% if current_user.full_profile? %>
+<%= render 'top/navbar' %>
+<div class="recruit_page">
+  <h2>～テニス仲間募集用掲示板～</h2>
+  
+  <div class="search_form">
+  <%= form_tag("/top", method: :get) do %>
+    <%= label_tag "場所" %>
+    <input type="text" name="place" placeholder="場所検索"><br>
+    <%= label_tag "人数" %>
+    <%= number_field_tag :number %><br>
+    <input type="submit" class="submitbutton" value="検索">
+  <% end %>
+  </div>
+  
+  <%= render @recruit_players %>
+  <div class="pagination"><%= paginate(@recruit_players) %></div>
+</div>
+<% else %>
+
+<p>まずはプロフィール画像を登録しよう</p>
+<%= link_to "プロフィール画像を設定する", edit_user_path(current_user) %>
+<% end %>
