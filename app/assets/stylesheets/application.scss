@@ -3,12 +3,14 @@
 body {
   margin : 0px;
   padding : 0px;
-  background-color :skyblue;
+  background : url("https://d1f5hsy4d47upe.cloudfront.net/ee/ee078b7d73f9eb33bb4569e646ffcc79_t.jpeg") fixed;
+  background-size : cover;
+  font-family : MS UI Gothic;
 }
 
 a {
   text-decoration : none;
-  padding : 5px;
+  padding : 5px; 
   border-radius : 5px;
 }
   
@@ -36,7 +38,13 @@ a {
   margin : 0 20px;
 }
 
-
+.main-contents {
+  background-color : lightgreen;
+  opacity : 0.9;
+  height : device;
+  padding-bottom : 100px;
+  padding-top : 20px;
+}
 
 
 
