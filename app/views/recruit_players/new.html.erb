@@ -1,7 +1,11 @@
+<%= render 'top/navbar' %>
+
 <div class="form">
   <div class="recruit_players_page">
     <%= form_for(@recruit_player) do |f| %>
-      <h2>メンバーを募集する</h2>
+      <div class="recruit_players_page_title">
+        <p>メンバーを募集する</p>
+      </div>
       
       <div class="form_group">
         <%= f.label "希望場所" %>
@@ -14,12 +18,12 @@
       </div>
       
       <div class="form_group">
-        <%= f.label "希望開始時間" %>
+        <%= f.label "希望開始時間" %><br>
         <%= f.datetime_select :start_time %>
       </div>
       
       <div class="form_group">
-        <%= f.label "希望終了時間" %>
+        <%= f.label "希望終了時間" %><br>
         <%= f.datetime_select :finish_time %>
       </div>
       

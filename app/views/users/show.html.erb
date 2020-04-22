@@ -1,16 +1,16 @@
-
+<%= render 'top/navbar' %>
 <div class="user_page container">
   <h2　class="user_page_title"><span><%= @user.nickname %></span>さんのページ</h2>
   <div class="user_introduction row">
     <h3 class="col-sm-12">自己紹介</h3>
-    <div class="image col-sm-12">
+    <div class="image">
       <% if @user.image.attached? %>
       <%= image_tag @user.image.variant(resize: "100x100") %>
       <% else %>
       <p>画像<br>無し</p>
       <% end %>
       <div class="clear"></div>
-      <div>
+      <div class="watch_tennis">
         <%= link_to "#{@user.nickname}さんのテニス風景を見る", "/users/#{@user.id}/video" %>
       </div>
     </div>
@@ -42,5 +42,7 @@
   <% else %>
   <p><%= @user.nickname %> さんは現在、仲間を募集しておりません。</p>
   <% end %>
-  <%= paginate(@recruit_players) %>
+  <div class="paginate_tag">
+    <%= paginate(@recruit_players) %>
+  </div>
 </div>

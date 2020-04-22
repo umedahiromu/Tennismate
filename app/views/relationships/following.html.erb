@@ -1,16 +1,18 @@
+<%= render 'top/navbar' %>
+
 <div class="followings_contents">
   <h3><%= @user.nickname %>さんのフォローリスト</h3>
   <div class="followings container">
     <% @followings.each do |following| %>
       <div class="following row">
-        <div class="image col-lg-2col-xs-12">
+        <div class="following_image col-lg-2 col-xs-2">
           <% if following.image.attached? %>
           <%= image_tag following.image.variant(resize: "100x100") %>
           <% else %>
           <p>画像<br>無し</p>
           <% end %>
         </div>
-        <div class="following_name col-lg-10 col-xs-12">
+        <div class="following_name col-lg-10 col-xs-10">
           <p><%= link_to "#{following.nickname}", user_path(following) %></p>
           <p>
             <%= link_to "フォロー: #{following.followings.count}", "/relationships/#{following.id}/following" %> ,

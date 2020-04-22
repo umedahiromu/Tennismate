@@ -8,6 +8,11 @@ body {
   font-family : MS UI Gothic;
 }
 
+nav {
+  position : relative;
+  top : -20px;
+}
+
 a {
   text-decoration : none;
   padding : 5px; 
@@ -40,9 +45,11 @@ a {
 
 .main-contents {
   background-color : lightgreen;
+  background-size : cover;
   opacity : 0.9;
-  height : device;
-  padding-bottom : 100px;
+  
+  background-position : fixed;
+  padding-bottom : 50vh;
   padding-top : 20px;
 }
 
@@ -56,8 +63,8 @@ a {
 
 .pagination {
   width : 60%;
-  margin-left : auto;
-  margin-right : auto;
+  margin : 30px auto 0;
+  justify-content: center;
 }
 
 .recruit_player_content {
@@ -65,7 +72,7 @@ a {
   width : 60%;
   border : 1px solid blue;
   border-radius : 10px;
-  padding : 10px;
+  padding : 20px;
 }
 
 .recruit_player_content .user_image {
@@ -74,6 +81,8 @@ a {
   width : 100px;
   height : 100px;
 }
+
+
 
 .user_title {
   height : 100px;
@@ -88,17 +97,35 @@ a {
 .timeplace {
   position : relative;
   left : 0px;
+  font-size : 1.1em;
+}
+
+@media screen and (max-width:800px){
+  .recruit_player_content {
+    margin : 20px auto;
+    width : 80%;
+    border : 1px solid blue;
+    border-radius : 10px;
+    padding : 20px;
+  }
+}
+
+@media screen and (max-width:700px){
+  .recruit_player_content {
+    width : 90%;
+  }
+}
+
+@media screen and (max-width:700px){
+  .timeplace {
+    font-size : 1.0em;
+    font-weight : bold;
+  }
 }
 
 /*users.scss*/
 .image {
-  margin : 0 auto;
-  width : 100px;
-  height : 100px;
-}
-
-.formtitle {
-  text-align : center;
+  margin : 20px auto;
 }
 
 .user_page {
@@ -106,17 +133,76 @@ a {
   text-align : center;
 }
 
+.user_introduction {
+  width : 80%;
+  margin : 20px auto;
+}
+
+.watch_tennis {
+  padding-top : 15px;
+}
+
+@media screen and (max-width:800px){
+  .user_introduction {
+    width : 90%;
+  }
+}
+
 .log_in_panel {
   width : 50%;
   margin : 20px auto;
+}
+
+.formtitle {
+  text-align : center;
+  font-size : 2.3em;
+  padding-bottom : 40px;
+}
+
+.formtitle_subtitle {
+  font-size : 1.6em;
+  
 }
 
 .login_title {
   text-align : center;
 }
 
+@media screen and (max-width:800px){
+  .formtitle {
+    font-size : 1.7em;
+    padding-bottom : 30px;
+  }
+  
+  .formtitle_subtitle {
+    font-size : 1.3em;
+    
+  }
+}
+
+@media screen and (max-width:600px){
+  .log_in_panel {
+    width : 80%;
+    margin : 20px auto;
+  }
+  
+  .formtitle {
+    font-size : 1.5em;
+    padding-bottom : 20px;
+  }
+  
+  .formtitle_subtitle {
+    font-size : 1.1em;
+    
+  }
+}
+
 .field {
   margin : 20px 0;
+}
+
+.edit_field {
+  margin : 20px auto;
 }
 
 .actions {
@@ -130,13 +216,52 @@ a {
 }
 
 .field #user_image {
-  width : 30%;
+  width : 100%;
   margin : 0 auto;
 }
 
 .field #user_video {
-  width : 30%;
+  width : 100%;
   margin : 0 auto;
+}
+
+.edit_field #user_image {
+  width : 25%;
+  margin : 0 auto;
+}
+
+.edit_field #user_video {
+  width : 25%;
+  margin : 0 auto;
+}
+
+@media screen and (max-width:800px){
+  .user_page {
+    font-size : 0.95em;
+    font-weight : bold;
+  }
+  
+  .user_page h2 {
+    font-size : 1.5em;
+  }
+  
+  .edit_field #user_image {
+    width : 50%;
+  }
+  
+  .edit_field #user_video {
+    width : 50%;
+  }
+}
+
+@media screen and (max-width:600px){
+  .edit_field #user_image {
+    width : 60%;
+  }
+  
+  .edit_field #user_video {
+    width : 60%;
+  }
 }
 
 .field input[type="password"] {
@@ -145,14 +270,15 @@ a {
   border-radius : 10px;
 }
 
-.user_introduction {
-  width : 70%;
+.registration {
+  width : 50%;
   margin : 20px auto;
 }
 
-.registration {
-  width :50%;
-  margin : 20px auto;
+@media screen and (max-width:700px){
+  .registration {
+    width : 90%;
+  }
 }
 
 .field input[type="text"] {
@@ -169,6 +295,10 @@ a {
   width : 100%;
   margin : 0 auto;
 }
+
+.file_choice {
+  width : 100%;
+} 
 
 .user_recruit_title {
   margin : 20px auto;
@@ -205,6 +335,11 @@ a {
   margin : 20px auto;
 }
 
+.recruit_players_page_title {
+  font-size : 1.8em;
+  text-align : center;
+}
+
 .form_group {
   margin : 20px auto;
 }
@@ -224,6 +359,16 @@ input[type="submit"] {
   border-radius : 5px;
 }
 
+@media screen and (max-width:700px){
+  .form {
+    width : 80%;
+  }
+  
+  .recruit_players_page_title {
+    font-size : 1.5em;
+  }
+}
+
 /*players_comments.scss*/
 .sub_content {
   width : 60%;
@@ -231,11 +376,16 @@ input[type="submit"] {
 }
 
 .contents {
-  margin-top : 60px;
+  margin-top : 40px;
 }
 
 .comment_contents {
   margin-top : 60px;
+}
+
+.comment_attention {
+  text-align : center;
+  padding-top : 20px;
 }
 
 .comment_user_image {
@@ -246,7 +396,7 @@ input[type="submit"] {
   position : relative;
   left : 0px;
   width : 70%;
-  margin-right : 20px;
+  
   margin-top : 10px;
   border-bottom : 1px solid darkgray;
 }
@@ -257,6 +407,22 @@ input[type="submit"] {
 
 .like {
   margin-top : 20px;
+}
+
+@media screen and (max-width:800px){
+  .sub_content {
+    width : 80%;
+  }
+}
+
+@media screen and (max-width:700px){
+  .sub_content {
+    width : 90%;
+  }
+  
+  .comment {
+    width : 100%;
+  }
 }
 
 /*relationships.scss*/
@@ -282,6 +448,11 @@ h3 {
   text-align : center;
 }
 
+.follower_image {
+  margin : 0px auto 10px;
+  text-align : center;
+}
+
 
 .followings_contents {
   width : 60%;
@@ -297,10 +468,42 @@ h3 {
   text-align : center;
 }
 
+.following_image {
+  margin : 0px auto 10px;
+  text-align : center;
+}
+
+@media screen and (max-width:600px){
+  .followings_contents {
+    width : 90%;
+  }
+  
+  .followings_contents h3 {
+    font-size : 1.1em;
+    font-weight : bold;
+  }
+  
+  .followers_contents {
+    width : 90%;
+  }
+  
+  
+}
+
+
+
 
 /* notifications.scss */
 .notifications {
   margin: 40px auto;
+}
+
+.notice_title {
+  width : 60%;
+  margin : 0 auto;
+  font-size : 1.8em;
+  text-align : center;
+  border-bottom : 1px solid darkgray;
 }
 
 .notification {
@@ -309,6 +512,19 @@ h3 {
   padding-top : 15px;
   padding-bottom : 10px;
   border-bottom : 1px solid darkgray;
+}
+
+@media screen and (max-width:700px){
+  .notice_title {
+    width : 90%;
+    font-size : 1.3em;
+  }
+  
+  .notification {
+    width : 90%;
+    font-size : 1.0em;
+    font-weight : bold;
+  }
 }
 
 /* check.scss */
@@ -322,12 +538,33 @@ tr {
   text-align : center;
 }
 
+.checklist_title {
+  font-size : 1.8em;
+}
+
 .checktable {
   margin : 30px auto;
 }
 
 table {
   margin : 0 auto;
+}
+
+@media screen and (max-width:700px){
+  .checklist_title {
+    font-size : 1.3em;
+  }
+  
+  .checklist {
+    width : 90%;
+  }
+}
+
+@media screen and (max-width:600px){
+  .checktable {
+    font-size : 0.9em;
+    font-weight : bold;
+  }
 }
 /*
 

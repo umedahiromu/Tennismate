@@ -1,9 +1,11 @@
+<%= render 'top/navbar' %>
+
 <div class="followers_contents">
   <h3>いいねしたユーザー一覧</h3>
   <div class="followers container">
     <% @likedmembers.each do |likedmember| %>
       <div class="follower row">
-        <div class="image col-lg-2 col-xs-12">
+        <div class="follower_image col-lg-2 col-xs-12">
           <% if likedmember.image.attached? %>
           <%= image_tag likedmember.image.variant(resize: "100x100") %>
           <% else %>
