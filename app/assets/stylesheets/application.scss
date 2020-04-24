@@ -47,9 +47,8 @@ a {
   background-color : lightgreen;
   background-size : cover;
   opacity : 0.9;
-  
   background-position : fixed;
-  padding-bottom : 50vh;
+  padding-bottom : 60vh;
   padding-top : 20px;
 }
 
@@ -325,6 +324,16 @@ a {
 
 .back_to_user {
   margin-top : 20px;
+}
+
+.forgot_title {
+  text-align : center;
+  padding-top : 30px;
+}
+
+.forgot_form {
+  width : 50%;
+  margin : 0 auto;
 }
 
 
