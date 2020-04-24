@@ -68,3 +68,6 @@ gem 'kaminari'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'carrierwave'
+group :production do
+  gem 'rails_12factor'
+end
