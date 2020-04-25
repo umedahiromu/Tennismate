@@ -18,7 +18,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-  validates_presence_of :image
+  validates_presence_of :image, :nickname
   
   mount_uploader :video, VideoUploader
          
