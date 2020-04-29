@@ -30,8 +30,22 @@
     </div>
   </div>
   <% if @user.id == current_user.id %>
-  <p><%= link_to "プロフィールを編集する", edit_user_path(current_user) %></p>
+    <p><%= link_to "プロフィールを編集する", edit_user_path(current_user) %></p>
   <% end %>
+  
+  <% unless @user.id == current_user.id %>
+    <% if @isRoom == true %>
+      <p><%= link_to "メッセージを送る", room_path(@roomId) %></p>
+    <% else %>
+      <%= form_for @room do |f| %>
+        <%= fields_for @entry do |e| %>
+          <%= e.hidden_field :user_id, :value=> @user.id %>
+        <% end %>
+        <%= f.submit "メッセージを送る" %>
+      <% end %>
+    <% end %>
+  <% end %>
+  
   <p><%= link_to "トップページに戻る", root_path %></p>
 </div>
 

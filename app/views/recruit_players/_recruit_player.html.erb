@@ -3,7 +3,7 @@
   <div class="user_title"><h3>募集主： <%= link_to "#{recruit_player.user.nickname}", user_path(recruit_player.user) %></h3></div>
   <div class="clear"></div>
   <div class="timeplace">
-  <p class="tennistime">希望時間: <%= recruit_player.start_time.strftime("%Y-%m-%d %H:%M") %>～<%= recruit_player.finish_time.strftime("%Y-%m-%d %H:%M") %></p>
+    <p class="tennistime">希望時間: <%= recruit_player.start_time.strftime("%Y-%m-%d %H:%M") %>～<%= recruit_player.finish_time.strftime("%Y-%m-%d %H:%M") %></p>
     <p>希望場所: <%= recruit_player.place %></p>
     <p>募集人数: <%= recruit_player.number %>人</p>
     <div class="detail_content">

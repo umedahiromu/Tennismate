@@ -48,7 +48,7 @@ a {
   background-size : cover;
   opacity : 0.9;
   background-position : fixed;
-  padding-bottom : 60vh;
+  padding-bottom : 80vh;
   padding-top : 20px;
 }
 
@@ -575,6 +575,51 @@ table {
     font-weight : bold;
   }
 }
+
+
+
+/* room.scss */
+.dm_send_content {
+  width : 60%;
+  margin : 20px auto;
+}
+
+.message_to_men {
+  font-size : 2.0em;
+  text-align : center;
+}
+
+.message_form {
+  margin : 0 auto;
+  text-align : center;
+}
+
+.message_form textarea {
+  width : 100%;
+}
+
+.message_form button {
+  padding : 5px 10px;
+  margin : 10px;
+}
+
+.link_to_top {
+  margin-top : 30px;
+}
+
+@media screen and (max-width:800px){
+  .dm_send_content {
+    width : 80%;
+  }
+}
+
+@media screen and (max-width:700px){
+  .dm_send_content {
+    width : 90%;
+  }
+}
+
+
 /*
 
 

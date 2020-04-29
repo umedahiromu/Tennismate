@@ -1,6 +1,8 @@
 class TopController < ApplicationController
   def index
-    if params[:number] == "" && params[:place] == ""
+    if params[:number] == nil && params[:place] == nil
+      @recruit_players = RecruitPlayer.order("start_time").page(params[:page]).per(5)
+    elsif params[:number] == "" && params[:place] == ""
       @recruit_players = RecruitPlayer.order("start_time").page(params[:page]).per(5)
     elsif params[:number] == ""
       @recruit_players = RecruitPlayer.where('place LIKE(?)', "%#{params[:place]}%").order("start_time").page(params[:page]).per(5)

@@ -1,0 +1,30 @@
+<%= render 'top/navbar' %>
+<div class="dm_send_content">
+  <p class="message_to_men"><strong>
+    To : <% @entry.each do |entry| %> 
+    <%= entry.user.nickname %>
+    <% end %></strong>
+  </p>
+  
+  <form class="message_form">
+    <textarea type="text" id="chat-input" placeholder="メッセージを送信する" cols="50" rows="5"></textarea><br>
+    <button id="button" class="btn btn-primary">送信</button>
+  </form>
+</div>
+
+<div class="clear"></div>
+
+<div class="sub_content">
+  <div class="comment_contents container">
+    <div  class="contents row" id="direct_messages" data-room_id="<%= @room.id %>">
+      <%= render @direct_messages %>
+    </div>
+  </div>
+  <div class="link_to_top">
+    <%= link_to "トップに戻る", root_path %>
+  </div>
+</div>
+
+
+
+

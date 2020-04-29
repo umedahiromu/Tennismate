@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rooms/show'
   devise_for :users
   root to: "top#index"
   resources :top, only: [:index]
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
     end
   end
   resources :notifications, only: :index
+  resources :rooms
    
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
