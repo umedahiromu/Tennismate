@@ -16,6 +16,9 @@
   
   <%= render @recruit_players %>
   <div class="pagination"><%= paginate(@recruit_players) %></div>
+  <div class="to_top">
+    <p><%= link_to "トップページに戻る", root_path %></p>
+  </div>
 </div>
 <% else %>
 
