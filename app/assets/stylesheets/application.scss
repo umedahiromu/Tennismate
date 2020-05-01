@@ -8,11 +8,6 @@ body {
   font-family : MS UI Gothic;
 }
 
-nav {
-  position : relative;
-  top : -20px;
-}
-
 a {
   text-decoration : none;
   padding : 5px; 
@@ -52,10 +47,9 @@ a {
   padding-top : 20px;
 }
 
-
-
 /*top.scss*/
 .recruit_page {
+  padding-top : 56px;
   margin : 40px auto;
   text-align : center;
 }
@@ -64,6 +58,10 @@ a {
   width : 60%;
   margin : 30px auto 0;
   justify-content: center;
+}
+
+.new_comment_page {
+  padding-top : 56px;
 }
 
 .recruit_player_content {
@@ -81,8 +79,6 @@ a {
   height : 100px;
 }
 
-
-
 .user_title {
   height : 100px;
 }
@@ -90,7 +86,11 @@ a {
 .recruit_player_content h3 {
   float : left;
   margin-left : 30px;
-  
+}
+
+.destroyed_recruit_page {
+  padding-top : 56px;
+  text-align : center;
 }
 
 .timeplace {
@@ -113,9 +113,7 @@ a {
   .recruit_player_content {
     width : 90%;
   }
-}
-
-@media screen and (max-width:700px){
+  
   .timeplace {
     font-size : 1.0em;
     font-weight : bold;
@@ -128,6 +126,7 @@ a {
 }
 
 .user_page {
+  padding-top : 56px;
   margin : 40px auto;
   text-align : center;
 }
@@ -274,10 +273,94 @@ a {
   margin : 20px auto;
 }
 
+.first_introduction {
+  color : gray;
+  text-align : center;
+}
+
+.first_enter_intro {
+  font-size : 1.9em;
+  padding : 25px 0;
+}
+
+.nervous_li {
+  font-size : 1.2em;
+  line-height : 45px;
+}
+
+.nervous_white {
+  color : black;
+}
+
+.pittari {
+  padding : 30px 0;
+  font-size : 1.7em;
+}
+
+.finish_intro {
+  padding : 10px 0;
+  font-size : 1.3em;
+}
+
+@media screen and (max-width:1000px){
+  .first_enter_intro {
+    font-size : 1.7em;
+    padding : 25px 0;
+  }
+}
+
+@media screen and (max-width:900px){
+  .first_enter_intro {
+    font-size : 1.5em;
+    padding : 25px 0;
+  }
+  
+  .nervous_li {
+    font-size : 1.1em;
+    line-height : 35px;
+  }
+  
+  .pittari {
+    padding : 25px 0;
+    font-size : 1.6em;
+  }
+  
+  .finish_intro {
+    padding : 10px 0;
+    font-size : 1.2em;
+  }
+}
+
 @media screen and (max-width:700px){
   .registration {
     width : 90%;
   }
+  
+  .first_enter_intro {
+    font-size : 1.3em;
+    padding : 25px 0;
+  }
+  
+  .nervous_li {
+    font-size : 1.0em;
+    line-height : 35px;
+  }
+  
+  .pittari {
+    padding : 25px 0;
+    font-size : 1.4em;
+  }
+  
+  .finish_intro {
+    padding : 10px 0;
+    font-size : 1.1em;
+  }
+}
+
+@media screen and (max-width:600px){
+  .first_enter_intro {
+      padding : 15px 0;
+    }
 }
 
 .field input[type="text"] {
@@ -309,6 +392,7 @@ a {
 }
 
 .video_contents {
+  padding-top : 56px;
   margin : 20px auto;
   width : 60%;
   text-align : center;
@@ -340,6 +424,7 @@ a {
 
 /*recruit_players.scss*/
 .form {
+  padding-top : 56px;
   width : 60%;
   margin : 20px auto;
 }
@@ -444,6 +529,7 @@ h3 {
 }
 
 .followers_contents {
+  padding-top : 56px;
   width : 60%;
   margin : 30px auto;
 }
@@ -464,6 +550,7 @@ h3 {
 
 
 .followings_contents {
+  padding-top : 56px;
   width : 60%;
   margin : 30px auto;
 }
@@ -504,6 +591,7 @@ h3 {
 
 /* notifications.scss */
 .notifications {
+  padding-top : 56px;
   margin: 40px auto;
 }
 
@@ -542,6 +630,7 @@ tr {
 }
 
 .checklist {
+  padding-top : 56px;
   width : 70%;
   margin : 20px auto;
   text-align : center;
@@ -580,6 +669,7 @@ table {
 
 /* room.scss */
 .dm_send_content {
+  padding-top : 56px;
   width : 60%;
   margin : 20px auto;
 }

@@ -5,6 +5,8 @@ class RecruitPlayer < ApplicationRecord
   has_many :liked_users, through: :likes, source: :user
   has_many :notifications, dependent: :destroy
   
+  validates_presence_of :text, :place, :number, :start_time, :finish_time
+  
   def create_notification_like!(current_user)
     # すでに「いいね」されているか検索
     temp = Notification.where(["visitor_id = ? and visited_id = ? and recruit_player_id = ? and action = ? ", current_user.id, user_id, id, 'like'])

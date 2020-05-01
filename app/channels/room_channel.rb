@@ -10,5 +10,6 @@ class RoomChannel < ApplicationCable::Channel
 
   def speak(data)
     DirectMessage.create! message: data['direct_message'], user_id: current_user.id, room_id: params['room']
+    Notification.create!(visitor_id: current_user.id, visited_id: data['userid'], room_id: params['room'], action: 'message')
   end
 end

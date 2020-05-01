@@ -5,22 +5,29 @@
   <% case notification.action %>
   <% when "follow" then %>
     <p>
-      <%= link_to "#{visitor.nickname}", user_path(visitor) %>さんが<%= visited.nickname %>さんをフォローしました。
+      <strong><%= link_to "#{visitor.nickname}", user_path(visitor) %></strong>さんがあなたをフォローしました。
     </p>
   <% when "like" then %>
     <p>
-      <%= link_to "#{visitor.nickname}", user_path(visitor) %>さんが
-      <%= link_to "#{visited.nickname}さんの投稿", "/recruit_players/#{notification.recruit_player_id}/players_comments/new" %>に
+      <strong><%= link_to "#{visitor.nickname}", user_path(visitor) %></strong>さんが
+      <strong><%= link_to "あなたの投稿", "/recruit_players/#{notification.recruit_player_id}/players_comments/new" %></strong>に
       いいねしました。
     </p>
   <% when "comment" then %>
     <p>
-      <%= link_to "#{visitor.nickname}", user_path(visitor) %>さんが
-      <%= link_to "#{notification.recruit_player.user.nickname}さんの投稿", "/recruit_players/#{notification.recruit_player_id}/players_comments/new" %>に
+      <strong><%= link_to "#{visitor.nickname}", user_path(visitor) %></strong>さんが
+      <strong><%= link_to "あなたの投稿", "/recruit_players/#{notification.recruit_player_id}/players_comments/new" %></strong>に
       コメントしました。
     </p>
     <p>
       「<%= notification.players_comment.text %>」
     </p>
+    
+  <% when "message" then %>
+    <p>
+      <%= link_to "#{visitor.nickname}", user_path(visitor) %>さんが
+      あなたに <strong><%= link_to "メッセージ", room_path(notification.room) %></strong> を送信しました。
+    </p>
+    
   <% end %>
 </div>
