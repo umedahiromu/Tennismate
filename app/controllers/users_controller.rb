@@ -5,8 +5,8 @@ class UsersController < ApplicationController
     @relationship = current_user.relationships.new
     @relationship.follow_id = @user.id
     
-    @currentUserEntry = Entry.where(user_id: current_user.id)
-    @userEntry=Entry.where(user_id: @user.id)
+    @currentUserEntry = Entry.where("user_id=?", current_user.id)
+    @userEntry=Entry.where("user_id=?", @user.id)
     unless @user.id == current_user.id
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|

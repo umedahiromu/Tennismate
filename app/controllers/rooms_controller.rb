@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     #present?の戻り値は真偽値。よって、trueの場合、
-    if Entry.where(:user_id => current_user.id, :room_id => @room.id).present?
+    if Entry.where("user_id=? AND room_id=?",current_user.id, @room.id).present?
       @direct_messages = @room.direct_messages
       @entry = @room.entries.where.not(user_id: current_user.id)
     else
