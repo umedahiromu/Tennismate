@@ -1,8 +1,9 @@
 <% if current_user.full_profile? %>
 <%= render 'top/navbar' %>
 <div class="recruit_page">
-  <h2>～テニス仲間募集用掲示板～</h2>
-  
+  <div class="bosyu_title">
+    <p>～テニス仲間募集用掲示板～</p>
+  </div>
   <div class="search_form">
   <%= form_tag("/top", method: :get) do %>
     <%= label_tag "場所" %>

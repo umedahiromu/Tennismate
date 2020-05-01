@@ -54,6 +54,13 @@ a {
   text-align : center;
 }
 
+.bosyu_title {
+  width : 60%;
+  margin : 0 auto;
+  text-align : center;
+  font-size : 2.0em;
+}
+
 .pagination {
   width : 60%;
   margin : 30px auto 0;
@@ -100,6 +107,11 @@ a {
 }
 
 @media screen and (max-width:800px){
+  .bosyu_title {
+    width : 70%;
+    font-size : 1.8em;
+  }
+  
   .recruit_player_content {
     margin : 20px auto;
     width : 80%;
@@ -110,6 +122,11 @@ a {
 }
 
 @media screen and (max-width:700px){
+  .bosyu_title {
+    width : 80%;
+    font-size : 1.5em;
+  }
+  
   .recruit_player_content {
     width : 90%;
   }
@@ -119,6 +136,14 @@ a {
     font-weight : bold;
   }
 }
+
+@media screen and (max-width:500px){
+  .bosyu_title {
+    width : 90%;
+    font-size : 1.4em;
+  }
+}
+
 
 /*users.scss*/
 .image {
@@ -490,7 +515,6 @@ input[type="submit"] {
   position : relative;
   left : 0px;
   width : 70%;
-  
   margin-top : 10px;
   border-bottom : 1px solid darkgray;
 }
@@ -501,6 +525,11 @@ input[type="submit"] {
 
 .like {
   margin-top : 20px;
+}
+
+.comment_finish {
+  margin : 30px auto;
+  text-align : center;
 }
 
 @media screen and (max-width:800px){

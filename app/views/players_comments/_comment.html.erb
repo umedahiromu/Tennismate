@@ -3,7 +3,7 @@
   <div class="comment col-sm-12">
     <p><%= link_to "#{comment.user.nickname}", user_path(comment.user) %> : <%= comment.text %></p>
     <p>
-      <%= time_ago_in_words comment.updated_at %>
+      <%= time_ago_in_words comment.updated_at %>前
       <% if @recruit_player.user.id==current_user.id %>
       <%= link_to "コメント削除", "/recruit_players/#{@recruit_player.id}/players_comments/#{comment.id}", method: :delete %>
       <% end %>
