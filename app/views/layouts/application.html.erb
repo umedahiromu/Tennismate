@@ -13,6 +13,15 @@
 
   <body>
     <div class="main-contents">
+      <% if user_signed_in? %>
+        <% if current_user.full_profile? %>
+          <%= render 'top/navbar' %>
+        <% end %>
+      <% end %>
+      <div class="notice_alert">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
       <%= yield %>
     </div>
   </body>
