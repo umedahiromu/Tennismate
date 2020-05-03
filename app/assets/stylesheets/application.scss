@@ -55,7 +55,7 @@ a {
 
 /*top.scss*/
 .recruit_page {
-  padding-top : 56px;
+  padding-top : 0px;
   margin : 40px auto;
   text-align : center;
 }
@@ -73,9 +73,7 @@ a {
   justify-content: center;
 }
 
-.new_comment_page {
-  padding-top : 56px;
-}
+
 
 .recruit_player_content {
   margin : 20px auto;
@@ -102,7 +100,7 @@ a {
 }
 
 .destroyed_recruit_page {
-  padding-top : 56px;
+  padding-top : 0px;
   text-align : center;
 }
 
@@ -157,7 +155,6 @@ a {
 }
 
 .user_page {
-  padding-top : 56px;
   margin : 40px auto;
   text-align : center;
 }
@@ -423,7 +420,6 @@ a {
 }
 
 .video_contents {
-  padding-top : 56px;
   margin : 20px auto;
   width : 60%;
   text-align : center;
@@ -455,7 +451,6 @@ a {
 
 /*recruit_players.scss*/
 .form {
-  padding-top : 56px;
   width : 60%;
   margin : 20px auto;
 }
@@ -564,7 +559,6 @@ h3 {
 }
 
 .followers_contents {
-  padding-top : 56px;
   width : 60%;
   margin : 30px auto;
 }
@@ -585,7 +579,6 @@ h3 {
 
 
 .followings_contents {
-  padding-top : 56px;
   width : 60%;
   margin : 30px auto;
 }
@@ -624,7 +617,6 @@ h3 {
 
 /* notifications.scss */
 .notifications {
-  padding-top : 56px;
   margin: 40px auto;
 }
 
@@ -663,7 +655,6 @@ tr {
 }
 
 .checklist {
-  padding-top : 56px;
   width : 70%;
   margin : 20px auto;
   text-align : center;
@@ -702,7 +693,6 @@ table {
 
 /* room.scss */
 .dm_send_content {
-  padding-top : 56px;
   width : 60%;
   margin : 20px auto;
 }
