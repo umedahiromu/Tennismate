@@ -1,6 +1,5 @@
 class TopController < ApplicationController
   def index
-    reset_session
     if params[:number] == nil && params[:place] == nil
       @recruit_players = RecruitPlayer.order("start_time").page(params[:page]).per(5)
     elsif params[:number] == "" && params[:place] == ""

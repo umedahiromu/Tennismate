@@ -1,16 +1,12 @@
 <%= render 'top/navbar' %>
 <div class="dm_send_content">
-  <p class="message_to_men"><strong>
-    To : <%= @entry[0].user.nickname %>さん</strong>
+  <p class="message_to_men">
+    <strong>To : <%= @entry[0].user.nickname %>さん</strong>
   </p>
-  
   <form class="message_form">
     <textarea type="text" id="chat-input" placeholder="メッセージを送信する" cols="50" rows="5" data-userid="<%= @entry[0].user_id %>"></textarea><br>
     <button id="button" class="btn btn-primary">送信</button>
   </form>
-  
-  
-  
 </div>
 
 <div class="clear"></div>
